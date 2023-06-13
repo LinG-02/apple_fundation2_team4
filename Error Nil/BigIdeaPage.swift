@@ -115,12 +115,22 @@ struct BigIdeaPage: View {
                             storageBigIdea1 = viewModel.BigIdea1
                             storageBigIdea2 = viewModel.BigIdea2
                         }) {
-                            Text("Done")
-                                .padding()
-                                .background(Color.green)
-                                .foregroundColor(.white)
-                                .font(.title)
-                                .cornerRadius(10)
+                            if storageBigIdea1.isEmpty && storageBigIdea2.isEmpty {
+                                Text("Done")
+                                    .padding()
+                                
+                                    .background(Color.green)
+                                    .foregroundColor(.white)
+                                    .font(.title)
+                                    .cornerRadius(10)
+                            } else {
+                                Text("Update")
+                                    .padding()
+                                    .background(Color.green)
+                                    .foregroundColor(.white)
+                                    .font(.title)
+                                    .cornerRadius(10)
+                            }
                         }
                     }
                     

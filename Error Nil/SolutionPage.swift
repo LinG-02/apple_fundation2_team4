@@ -99,12 +99,12 @@ struct SolutionPage: View {
                              .frame(height: 100)
                              .lineLimit(5)
 
-                         if appConcept.isEmpty {
-
-                             Text("Write your App Concept here...")
-                                 .foregroundColor(.gray)
-                                 .padding(EdgeInsets(top: 12, leading: 9, bottom: 0, trailing: 0))
-                         }
+//                         if appConcept.isEmpty {
+//
+//                             Text("Write your App Concept here...")
+//                                 .foregroundColor(.gray)
+//                                 .padding(EdgeInsets(top: 12, leading: 9, bottom: 0, trailing: 0))
+//                         }
                      }
 
 
@@ -115,12 +115,22 @@ struct SolutionPage: View {
                          Button(action: {
                              showAlert = true
                          }) {
-                             Text("Done")
-                                 .padding()
-                                 .background(Color.green)
-                                 .foregroundColor(.white)
-                                 .font(.title)
-                                 .cornerRadius(10)
+                             if solution.isEmpty && appConcept.isEmpty {
+                                 Text("Done")
+                                     .padding()
+                                 
+                                     .background(Color.green)
+                                     .foregroundColor(.white)
+                                     .font(.title)
+                                     .cornerRadius(10)
+                             } else {
+                                 Text("Update")
+                                     .padding()
+                                     .background(Color.green)
+                                     .foregroundColor(.white)
+                                     .font(.title)
+                                     .cornerRadius(10)
+                             }
                          }
                      }
 
@@ -149,6 +159,7 @@ struct SolutionPage: View {
              // Content of the pop-up view
              SolutionPagePopupView()
          }
+         .navigationBarBackButtonHidden(true)
     }
  }
 

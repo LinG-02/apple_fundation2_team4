@@ -69,12 +69,12 @@ struct PersonaePage: View {
                              .frame(height: 100)
                              .lineLimit(5)
 
-                         if personae.isEmpty {
-
-                             Text("Describe the persona here... \n\nHint: Don't be afraid to be specific ")
-                                 .foregroundColor(.gray)
-                                 .padding(EdgeInsets(top: 12, leading: 9, bottom: 0, trailing: 0))
-                         }
+//                         if personae.isEmpty {
+//
+//                             Text("Describe the persona here... \n\nHint: Don't be afraid to be specific ")
+//                                 .foregroundColor(.gray)
+//                                 .padding(EdgeInsets(top: 12, leading: 9, bottom: 0, trailing: 0))
+//                         }
                      }
 
 
@@ -114,12 +114,22 @@ struct PersonaePage: View {
                              personae = viewModel.Personae1
                              opportunityStatement = viewModel.Personae2
                          }) {
-                             Text("Done")
-                                 .padding()
-                                 .background(Color.green)
-                                 .foregroundColor(.white)
-                                 .font(.title)
-                                 .cornerRadius(10)
+                             if personae.isEmpty && opportunityStatement.isEmpty {
+                                 Text("Done")
+                                     .padding()
+                                 
+                                     .background(Color.green)
+                                     .foregroundColor(.white)
+                                     .font(.title)
+                                     .cornerRadius(10)
+                             } else {
+                                 Text("Update")
+                                     .padding()
+                                     .background(Color.green)
+                                     .foregroundColor(.white)
+                                     .font(.title)
+                                     .cornerRadius(10)
+                             }
                          }
                      }
 

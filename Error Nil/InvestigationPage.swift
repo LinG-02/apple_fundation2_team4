@@ -114,12 +114,22 @@ struct investigationPage: View {
                         investigation = viewModel.Investigate1
                         refinedChallenge = viewModel.Investigate2
                     }) {
-                        Text("Done")
-                            .padding()
-                            .background(Color.green)
-                            .foregroundColor(.white)
-                            .font(.title)
-                            .cornerRadius(10)
+                        if investigation.isEmpty && refinedChallenge.isEmpty {
+                            Text("Done")
+                                .padding()
+                            
+                                .background(Color.green)
+                                .foregroundColor(.white)
+                                .font(.title)
+                                .cornerRadius(10)
+                        } else {
+                            Text("Update")
+                                .padding()
+                                .background(Color.green)
+                                .foregroundColor(.white)
+                                .font(.title)
+                                .cornerRadius(10)
+                        }
                     }
                 }
                 Spacer()
