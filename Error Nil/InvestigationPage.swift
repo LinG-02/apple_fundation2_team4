@@ -86,10 +86,10 @@ struct investigationPage: View {
                 
                 
                 
-                Text("Refined Challenge")
+                Text("Using this information form a refined Challenge Statement")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .font(.system(size: 24))
-                    .padding(.top, 80)
+                    .padding(.top, 40)
                     .padding(.bottom, 10.0)
                 
                 
@@ -170,38 +170,59 @@ struct investigationPage: View {
 
  struct investigationPopupView: View {
      var body: some View {
-         VStack {
+         VStack(alignment: .center){
+             Image(systemName: "magnifyingglass")
+                             .font(.system(size: 60))
+                             .padding(.top, 60)
+         }
+         VStack(alignment: .leading) {
              Text("Domain Investigation")
                  .font(.headline)
-                 .padding()
+                 .padding(.horizontal, 20)
+                 .padding(.top, 40)
 
-             Text("A more thorough and polished exploration resulting in the development of a conceptual solution")
+             Text("This is a more thorough and polished exploration to development your conceptual understanding and important factors in relation to your domain")
                  .font(.subheadline)
-                 .padding()
-             
-             Text("Generating Guiding Questions")
+                 .padding(.horizontal, 20)
+                 .padding(.top, 4)
+                 .padding(.bottom, 4)
+             Divider()
+             Text("Refined Challenge Statement")
                  .font(.headline)
-                 .padding()
-             
-             Text("Starting from your challenge, produce a number of questions related to your challenge and the various aspects you must explore and learn in order to achieve it")
+                 .padding(.horizontal, 20)
+                 .padding(.top, 4 )
+
+             Text("Based on your synthesis of ideas from your findings and original Challenge Statement form a refined Challenge Statement")
                  .font(.subheadline)
-                 .padding()
-             
-             Text("Group, Refine & Prioritise")
-                 .font(.headline)
-                 .padding()
-             
-             Text("Copy and paste all your questions onto a new page ")
-                 .font(.subheadline)
-                 .padding()
-             
-             Text("Build Your Investigation Log")
-                 .font(.headline)
-                 .padding()
-             
-             Text("Replicate all the cards you have generated, then move them to the activities log column to begin your investigation. Elaborate each card and record your findings inside them")
-                 .font(.subheadline)
-                 .padding()
+                 .padding(.horizontal, 20)
+                 .padding(.top, 4)
+//             Text("Generating Guiding Questions")
+//                 .font(.headline)
+//                 .padding()
+//                 .padding(.top, 60)
+//
+//             Text("Produce a number of questions related to your challenge and the various aspects you must explore and learn in order to achieve it")
+//                 .font(.subheadline)
+//                 .padding()
+//                 .padding(.top, 10)
+//
+//             Text("Group, Refine & Prioritise")
+//                 .font(.headline)
+//                 .padding()
+//                 .padding(.top, 60)
+//
+//             Text("Copy and paste all your questions onto a new page ")
+//                 .font(.subheadline)
+//                 .padding()
+//                 .padding(.top, 10)
+//
+//             Text("Build Your Investigation Log")
+//                 .font(.headline)
+//                 .padding()
+//
+//             Text("Replicate all the cards you have generated, then move them to the activities log column to begin your investigation. Elaborate each card and record your findings inside them")
+//                 .font(.subheadline)
+//                 .padding()
 
          }
              .padding()

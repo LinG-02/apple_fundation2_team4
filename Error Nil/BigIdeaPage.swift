@@ -17,8 +17,8 @@ struct BigIdeaPage: View {
     // 11/6 Ling's update
     @AppStorage("BigIdea1") private var storageBigIdea1 = ""
     @AppStorage("BigIdea2") private var storageBigIdea2 = ""
-
-
+    
+    
     var body: some View {
         Spacer()
         NavigationView{
@@ -28,12 +28,12 @@ struct BigIdeaPage: View {
                 VStack(spacing: 5) {
                     HStack {
                         Button(action: {
-                                            presentationMode.wrappedValue.dismiss()
-                                        }) {
-                                            Image(systemName: "arrow.backward")
-                                                .font(.largeTitle)
-                                                .foregroundColor(.black)
-                                        }
+                            presentationMode.wrappedValue.dismiss()
+                        }) {
+                            Image(systemName: "arrow.backward")
+                                .font(.largeTitle)
+                                .foregroundColor(.black)
+                        }
                         Spacer()
                         
                         Text("Big Idea")
@@ -49,8 +49,8 @@ struct BigIdeaPage: View {
                         }
                     }
                     .padding()
-
-                    Text("A Big Idea is a broad concept that can be explored in multiple ways")
+                    
+                    Text("Write some Big Ideas in the box below and choose one to pursue")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.system(size: 24))
                         .padding(.top, 40)
@@ -66,57 +66,77 @@ struct BigIdeaPage: View {
                             .frame(height: 100)
                             .lineLimit(5)
                         
-//                        if storageBigIdea1.isEmpty {
-//                            Text("Write your Big Idea here...")
-//                                .foregroundColor(.gray)
-//                                .padding(EdgeInsets(top: 12, leading: 9, bottom: 0, trailing: 0))
-//                        }
+                        //                        if storageBigIdea1.isEmpty {
+                        //                            Text("Write your Big Idea here...")
+                        //                                .foregroundColor(.gray)
+                        //                                .padding(EdgeInsets(top: 12, leading: 9, bottom: 0, trailing: 0))
+                        //                        }
                     }
                     
-   
-                    Text("Essential Question")
+                    
+                    Text("Write some Essential Questions in the box below and choose the main one to pursue")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.system(size: 24))
-                        .padding(.top, 80)
+                        .padding(.top, 40)
                         .padding(.bottom, 10.0)
                     
                     
                     ZStack(alignment: .topLeading) {
                         TextEditor(text: $viewModel.BigIdea2)
                             .padding(.vertical, 3)
-                            .padding(.horizontal, 5)
+                            .padding(.horizontal, 3)
                             .border(Color.black, width: 1)
                             .multilineTextAlignment(.leading)
                             .frame(height: 100)
                             .lineLimit(5)
                         
-//                        if storageBigIdea1.isEmpty {
-//
-//                            Text("Write your Essential Question here...")
-//                                .foregroundColor(.gray)
-//                                .padding(EdgeInsets(top: 12, leading: 9, bottom: 0, trailing: 0))
-//                        }
-                    
+                        //                        if storageBigIdea1.isEmpty {
+                        //
+                        //                            Text("Write your Essential Question here...")
+                        //                                .foregroundColor(.gray)
+                        //                                .padding(EdgeInsets(top: 12, leading: 9, bottom: 0, trailing: 0))
+                        //                        }
+                        
                     }
                     
-                        .padding(.top, 40)
-                    HStack {
+                    //.padding(.top, 40)
+                    VStack{
                         Spacer()
-                        Button(action: {
-                            showAlert = true
-                            viewModel.saveToDatabase()
-                            storageBigIdea1 = viewModel.BigIdea1
-                            storageBigIdea2 = viewModel.BigIdea2
-                        }) {
-                            Text("Done")
-                                .padding()
-                                .background(Color.green)
-                                .foregroundColor(.white)
-                                .font(.title)
-                                .cornerRadius(10)
+                        HStack {
+                            Spacer()
+                            
+                            Button(action: {
+                                showAlert = true
+                                viewModel.saveToDatabase()
+                                storageBigIdea1 = viewModel.BigIdea1
+                                storageBigIdea2 = viewModel.BigIdea2
+                            }) {
+                                //                            Text("Done")
+                                //                                .padding()
+                                //                                .background(Color.green)
+                                //                                .foregroundColor(.white)
+                                //                                .font(.title)
+                                //                                .cornerRadius(10)
+                                //.padding(.top, 20)
+                                if storageBigIdea1.isEmpty && storageBigIdea2.isEmpty {
+                                    Text("Done")
+                                        .padding()
+                                    
+                                        .background(Color.green)
+                                        .foregroundColor(.white)
+                                        .font(.title)
+                                        .cornerRadius(10)
+                                } else {
+                                    Text("Update")
+                                        .padding()
+                                        .background(Color.green)
+                                        .foregroundColor(.white)
+                                        .font(.title)
+                                        .cornerRadius(10)
+                                }
+                            }
                         }
                     }
-                    
                     Spacer()
                 }
                 .padding()
@@ -138,7 +158,7 @@ struct BigIdeaPage: View {
             print("didPerformInitialization value: \(didPerformInitialization)")
             if !didPerformInitialization {
                 viewModel.clearDatabase()
-            didPerformInitialization = true
+                didPerformInitialization = true
             }
             viewModel.fetchDataFromDatabase()
         }
@@ -149,39 +169,60 @@ struct BigIdeaPage: View {
 
 struct BigIdeaPopupView: View {
     var body: some View {
-        VStack (alignment: .leading) {
+        VStack(alignment: .center){
+            Image(systemName: "lightbulb.fill")
+                            .font(.system(size: 60))
+                            .padding(.top, 60)
+        }
+        VStack (alignment: .leading, spacing: 5) {
+            //Spacer()
+            
             Text("What is a Big Idea?")
                 .font(.headline)
-                .padding()
+                .padding(.horizontal, 20)
+                .padding(.top, 20)
             
             Text("A Big Idea is a significant concept that can be approached from various angles and holds relevance and interest for the learner")
-                .font(.system(size: 16))
+                .font(.subheadline)
+                .padding(.horizontal, 20)
+                .padding(.top, 4)
             
-            Text("Note down a number of big ideas and connect them to 3 - 4 keywords each. Make connections between the different elements")
+            Text("e.g. Lifestyle, Fitness, Connection, Mental Health")
+                .foregroundColor(.gray)
                 .font(.system(size: 16))
+                .padding(.horizontal, 20)
+                .padding(.top, 4)
+                .padding(.bottom, 4)
+            Divider()
+            Text("Brainstorming Tip")
+                .font(.headline)
+                .foregroundColor(.black)
+                .padding(.top, 4)
+                .padding(.horizontal, 20)
             
+            Text("Create a mindmap with all relevant ideas. Organise 'Big Ideas' into groups, it allows for the fluid movement of ideas across various topics")
+                .font(.system(size: 16))
+                .padding(.horizontal, 20)
+                .padding(.top, 4)
+                .padding(.bottom, 4)
+            Divider()
             Text("Essential Questioning")
                 .font(.headline)
-                .padding()
+                //.padding()
+                .padding(.horizontal, 20)
+                .padding(.top, 4)
             
             Text("Write down at least two Essential Questions and consider: Why do you care about this? What specifically do you care about? What do you want to focus on?")
                 .font(.system(size: 16))
+                .padding(.horizontal, 20)
+                .padding(.top, 4)
             
-            Text("Brainstorming Tips:")
+            Text("e.g. How to improve...? Who wants to achieve...? Why... matters? How can...?")
                 .foregroundColor(.gray)
-                .font(.subheadline)
-                .padding()
-            
-            Text("- Create stick-it notes and arrange into categories of 'how', 'what', 'who', 'why'")
-                .multilineTextAlignment(.leading)
                 .font(.system(size: 16))
-            
-            Text("- Create a mindmap with all relevant ideas. By organising concepts into groups, it allows for the fluid movement of ideas across various topics")
-                .font(.system(size: 16))
-
-            Image("challengeimage")
-                .resizable()
-                .frame(width: 360, height: 200, alignment: .center)
+                .padding(.horizontal, 20)
+                .padding(.top, 4)
+      
             
         }
         .padding()

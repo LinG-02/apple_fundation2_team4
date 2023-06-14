@@ -41,8 +41,9 @@ struct PrototypePage: View {
                             
                             Text("Prototype")
                                 .font(.largeTitle)
-                                .fontWeight(.light)
+                                //.fontWeight(.light)
                                 .frame(maxWidth: .infinity, alignment: .center)
+                                //.padding(.horizontal, 20)
                             Spacer()
                             Spacer()
                             Spacer()
