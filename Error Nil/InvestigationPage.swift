@@ -55,13 +55,19 @@ struct investigationPage: View {
                 }
                 .padding()
                 
-                Text("Opportunities to explore, research and acquire necessary knowledge and skills for recognising and creating a significant and enduring solution")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.system(size: 24))
-                    .padding(.top, 40)
-                    .padding(.bottom, 10.0)
-                
+                VStack {
+                    
+                    Text("Find information from a variety of sources")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .font(.system(size: 24))
+                        .padding(.top, 40)
+                        .lineLimit(10)
+                }
+
+               
                 ZStack(alignment: .topLeading) {
+                    
+                    
                     TextEditor(text: $viewModel.Investigate1)
                         .padding(.vertical, 3)
                         .padding(.horizontal, 5)
