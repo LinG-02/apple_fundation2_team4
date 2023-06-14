@@ -20,6 +20,7 @@ struct investigationPage: View {
     @AppStorage("refinedChallenge") private var refinedChallenge = ""
     
     var body: some View {
+        Spacer()
         NavigationView{
             ZStack {
             Color(.sRGB, red: 1, green: 1, blue: 1)
@@ -144,6 +145,9 @@ struct investigationPage: View {
                 // Content of the pop-up view
                 investigationPopupView()
             }
+        }
+        .onTapGesture {
+                hideKeyboard()
         }
     }
         .onAppear {

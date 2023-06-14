@@ -20,14 +20,13 @@ struct BigIdeaPage: View {
 
 
     var body: some View {
+        Spacer()
         NavigationView{
             ZStack {
                 Color(.sRGB, red: 1, green: 1, blue: 1)
                     .edgesIgnoringSafeArea(.all)
                 VStack(spacing: 5) {
-                    
                     HStack {
-
                         Button(action: {
                                             presentationMode.wrappedValue.dismiss()
                                         }) {
@@ -40,7 +39,6 @@ struct BigIdeaPage: View {
                         Text("Big Idea")
                             .font(.largeTitle)
                             .frame(maxWidth: .infinity, alignment: .center)
-                        Spacer()
                         
                         Button(action: {
                             showInformation = true
@@ -49,11 +47,9 @@ struct BigIdeaPage: View {
                                 .font(.largeTitle)
                                 .foregroundColor(.black)
                         }
-                        
-                        
                     }
                     .padding()
-                    
+
                     Text("A Big Idea is a broad concept that can be explored in multiple ways")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.system(size: 24))
@@ -61,7 +57,6 @@ struct BigIdeaPage: View {
                         .padding(.bottom, 10.0)
                     
                     ZStack(alignment: .topLeading) {
-                        
                         
                         TextEditor(text: $viewModel.BigIdea1)
                             .padding(.vertical, 3)
@@ -103,9 +98,7 @@ struct BigIdeaPage: View {
 //                        }
                     
                     }
-                
                     
-                    Spacer()
                         .padding(.top, 40)
                     HStack {
                         Spacer()
@@ -137,6 +130,9 @@ struct BigIdeaPage: View {
                     BigIdeaPopupView()
                 }
             }
+        }
+        .onTapGesture {
+            hideKeyboard()
         }
         .onAppear {
             print("didPerformInitialization value: \(didPerformInitialization)")
@@ -203,4 +199,7 @@ struct BigIdeaPage_Previews: PreviewProvider {
         }
         .previewDevice("iPhone 14 Pro")
     }
+}
+public func hideKeyboard() {
+    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
 }

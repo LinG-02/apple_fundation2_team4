@@ -23,6 +23,7 @@ struct SolutionPage: View {
 
 
      var body: some View {
+         Spacer()
          NavigationView{
              ZStack {
                  
@@ -102,12 +103,12 @@ struct SolutionPage: View {
                              .frame(height: 100)
                              .lineLimit(5)
 
-                         if appConcept.isEmpty {
-
-                             Text("Write your App Concept here...")
-                                 .foregroundColor(.gray)
-                                 .padding(EdgeInsets(top: 12, leading: 9, bottom: 0, trailing: 0))
-                         }
+//                         if appConcept.isEmpty {
+//
+//                             Text("Write your App Concept here...")
+//                                 .foregroundColor(.gray)
+//                                 .padding(EdgeInsets(top: 12, leading: 9, bottom: 0, trailing: 0))
+//                         }
                      }
 
 
@@ -140,7 +141,9 @@ struct SolutionPage: View {
                      SolutionPagePopupView()
                  }
              }
-
+         }
+         .onTapGesture {
+             hideKeyboard()
          }
 //         .padding()
 //         .alert(isPresented: $showAlert) {

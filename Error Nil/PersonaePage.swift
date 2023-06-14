@@ -20,6 +20,7 @@ struct PersonaePage: View {
 
 
      var body: some View {
+         Spacer()
          NavigationView{
              ZStack {
                  Color(.sRGB, red: 1, green: 1, blue: 1)
@@ -146,7 +147,9 @@ struct PersonaePage: View {
                      PersonaePopupView()
                  }
              }
-
+             .onTapGesture {
+                 hideKeyboard()
+             }
          }
          .onAppear {
              print("didPerformInitialization value: \(didPerformInitialization)")
