@@ -28,15 +28,16 @@ struct SolutionPage: View {
                  
                  Color(.sRGB, red: 1, green: 1, blue: 1)
                      .edgesIgnoringSafeArea(.all)
+                 
                  VStack(spacing: 5) {
-
                      HStack {
                          Button(action: {
-                                             presentationMode.wrappedValue.dismiss()
-                                         }) {
-                                             Image(systemName: "arrow.backward")
-                                                 .font(.largeTitle)
-                                                 .foregroundColor(.black)
+                             presentationMode
+                             .wrappedValue.dismiss()
+                             
+                         }) {Image(systemName: "arrow.backward")
+                                 .font(.largeTitle)
+                                 .foregroundColor(.black)
                                          }
                          
                          Spacer()
@@ -57,6 +58,8 @@ struct SolutionPage: View {
 
                      }
                          .padding()
+                     
+
 
                      Text("Write your solution concept")
                          .frame(maxWidth: .infinity, alignment: .leading)
@@ -99,12 +102,12 @@ struct SolutionPage: View {
                              .frame(height: 100)
                              .lineLimit(5)
 
-//                         if appConcept.isEmpty {
-//
-//                             Text("Write your App Concept here...")
-//                                 .foregroundColor(.gray)
-//                                 .padding(EdgeInsets(top: 12, leading: 9, bottom: 0, trailing: 0))
-//                         }
+                         if appConcept.isEmpty {
+
+                             Text("Write your App Concept here...")
+                                 .foregroundColor(.gray)
+                                 .padding(EdgeInsets(top: 12, leading: 9, bottom: 0, trailing: 0))
+                         }
                      }
 
 
@@ -115,22 +118,12 @@ struct SolutionPage: View {
                          Button(action: {
                              showAlert = true
                          }) {
-                             if solution.isEmpty && appConcept.isEmpty {
-                                 Text("Done")
-                                     .padding()
-                                 
-                                     .background(Color.green)
-                                     .foregroundColor(.white)
-                                     .font(.title)
-                                     .cornerRadius(10)
-                             } else {
-                                 Text("Update")
-                                     .padding()
-                                     .background(Color.green)
-                                     .foregroundColor(.white)
-                                     .font(.title)
-                                     .cornerRadius(10)
-                             }
+                             Text("Done")
+                                 .padding()
+                                 .background(Color.green)
+                                 .foregroundColor(.white)
+                                 .font(.title)
+                                 .cornerRadius(10)
                          }
                      }
 
@@ -149,16 +142,17 @@ struct SolutionPage: View {
              }
 
          }
-         .padding()
-         .alert(isPresented: $showAlert) {
-             Alert(title: Text("Congratulations!"),
-                   message: Text("Remeber you can go back anytime to edit this milestone"),
-                   dismissButton: .default(Text("Dismiss")))
-         }
-         .sheet(isPresented: $showInformation) {
-             // Content of the pop-up view
-             SolutionPagePopupView()
-         }
+//         .padding()
+//         .alert(isPresented: $showAlert) {
+//             Alert(title: Text("Congratulations!"),
+//                   message: Text("Remeber you can go back anytime to edit this milestone"),
+//                   dismissButton: .default(Text("Dismiss")))
+//         }
+//         .sheet(isPresented: $showInformation) {
+//             // Content of the pop-up view
+//             SolutionPagePopupView()
+//         }
+         
          .navigationBarBackButtonHidden(true)
     }
  }
@@ -299,5 +293,6 @@ struct SolutionPage: View {
          SolutionPage()
      }
  }
+
 
 

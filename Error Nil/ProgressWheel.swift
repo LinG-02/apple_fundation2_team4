@@ -75,18 +75,18 @@ struct ProgressWheel: View {
                             .cornerRadius(10)
                     }
                 }
-//                Button(action: {
-//                    // Action for Button Prototype
-//                }) {
-//                    NavigationLink(destination: investigationPage()) {
-//                        Text("prototype")
-//                            .font(.headline)
-//                            .padding()
-//                            .background(Color.blue)
-//                            .foregroundColor(.white)
-//                            .cornerRadius(10)
-//                    }
-//                }
+                Button(action: {
+                    // Action for Button Prototype
+                }) {
+                    NavigationLink(destination: PrototypePage()) {
+                        Text("Prototype")
+                            .font(.headline)
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
+                }
             }
         
         }
@@ -96,8 +96,9 @@ struct ProgressWheel_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView { // Wrap the Welcome view with NavigationView
             ProgressWheel()
-                .navigationBarBackButtonHidden(true) 
+                .navigationBarBackButtonHidden(true)
         }
         .previewDevice("iPhone 14 Pro")
     }
 }
+
