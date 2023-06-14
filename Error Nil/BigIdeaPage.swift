@@ -96,7 +96,7 @@ struct BigIdeaPage: View {
                             .lineLimit(5)
                         
 //                        if storageBigIdea1.isEmpty {
-//                            
+//
 //                            Text("Write your Essential Question here...")
 //                                .foregroundColor(.gray)
 //                                .padding(EdgeInsets(top: 12, leading: 9, bottom: 0, trailing: 0))
@@ -115,22 +115,12 @@ struct BigIdeaPage: View {
                             storageBigIdea1 = viewModel.BigIdea1
                             storageBigIdea2 = viewModel.BigIdea2
                         }) {
-                            if storageBigIdea1.isEmpty && storageBigIdea2.isEmpty {
-                                Text("Done")
-                                    .padding()
-                                
-                                    .background(Color.green)
-                                    .foregroundColor(.white)
-                                    .font(.title)
-                                    .cornerRadius(10)
-                            } else {
-                                Text("Update")
-                                    .padding()
-                                    .background(Color.green)
-                                    .foregroundColor(.white)
-                                    .font(.title)
-                                    .cornerRadius(10)
-                            }
+                            Text("Done")
+                                .padding()
+                                .background(Color.green)
+                                .foregroundColor(.white)
+                                .font(.title)
+                                .cornerRadius(10)
                         }
                     }
                     
@@ -163,19 +153,46 @@ struct BigIdeaPage: View {
 
 struct BigIdeaPopupView: View {
     var body: some View {
-        VStack {
-            Text("Big Idea Information")
+        VStack (alignment: .leading) {
+            Text("What is a Big Idea?")
                 .font(.headline)
                 .padding()
             
-            Text("Information about Big Idea goes here")
+            Text("A Big Idea is a significant concept that can be approached from various angles and holds relevance and interest for the learner")
+                .font(.system(size: 16))
+            
+            Text("Note down a number of big ideas and connect them to 3 - 4 keywords each. Make connections between the different elements")
+                .font(.system(size: 16))
+            
+            Text("Essential Questioning")
+                .font(.headline)
+                .padding()
+            
+            Text("Write down at least two Essential Questions and consider: Why do you care about this? What specifically do you care about? What do you want to focus on?")
+                .font(.system(size: 16))
+            
+            Text("Brainstorming Tips:")
+                .foregroundColor(.gray)
                 .font(.subheadline)
                 .padding()
+            
+            Text("- Create stick-it notes and arrange into categories of 'how', 'what', 'who', 'why'")
+                .multilineTextAlignment(.leading)
+                .font(.system(size: 16))
+            
+            Text("- Create a mindmap with all relevant ideas. By organising concepts into groups, it allows for the fluid movement of ideas across various topics")
+                .font(.system(size: 16))
+
+            Image("challengeimage")
+                .resizable()
+                .frame(width: 360, height: 200, alignment: .center)
             
         }
         .padding()
         .background(Color.white)
         .cornerRadius(10)
+        
+        Spacer()
     }
 }
 
