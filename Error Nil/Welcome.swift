@@ -13,7 +13,7 @@ struct Welcome: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [Color.white.opacity(1.0), Color.yellow.opacity(0.2), .white, Color.blue.opacity(0.3)]), startPoint: .top, endPoint: .bottom)
+            LinearGradient(gradient: Gradient(colors: [Color.white.opacity(1.0), Color.yellow.opacity(0.2), .white, Color.yellow.opacity(0.3)]), startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             
             VStack {
