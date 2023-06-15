@@ -26,7 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3BDCA3E82A301E6600BB7A2A /* Error Nil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Error Nil.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BDCA3E82A301E6600BB7A2A /* AppSpark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppSpark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BDCA3EB2A301E6600BB7A2A /* Error_NilApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error_NilApp.swift; sourceTree = "<group>"; };
 		3BDCA3ED2A301E6600BB7A2A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3BDCA3EF2A301E6600BB7A2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 		3BDCA3E92A301E6600BB7A2A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3BDCA3E82A301E6600BB7A2A /* Error Nil.app */,
+				3BDCA3E82A301E6600BB7A2A /* AppSpark.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,9 +104,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3BDCA3E72A301E6600BB7A2A /* Error Nil */ = {
+		3BDCA3E72A301E6600BB7A2A /* AppSpark */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3BDCA3F62A301E6600BB7A2A /* Build configuration list for PBXNativeTarget "Error Nil" */;
+			buildConfigurationList = 3BDCA3F62A301E6600BB7A2A /* Build configuration list for PBXNativeTarget "AppSpark" */;
 			buildPhases = (
 				3BDCA3E42A301E6600BB7A2A /* Sources */,
 				3BDCA3E52A301E6600BB7A2A /* Frameworks */,
@@ -116,13 +116,13 @@
 			);
 			dependencies = (
 			);
-			name = "Error Nil";
+			name = AppSpark;
 			packageProductDependencies = (
 				772E09972A31570E002D2411 /* Realm */,
 				772E09992A31570E002D2411 /* RealmSwift */,
 			);
 			productName = "Error Nil";
-			productReference = 3BDCA3E82A301E6600BB7A2A /* Error Nil.app */;
+			productReference = 3BDCA3E82A301E6600BB7A2A /* AppSpark.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -140,7 +140,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3BDCA3E32A301E6500BB7A2A /* Build configuration list for PBXProject "Error Nil" */;
+			buildConfigurationList = 3BDCA3E32A301E6500BB7A2A /* Build configuration list for PBXProject "AppSpark" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -156,7 +156,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3BDCA3E72A301E6600BB7A2A /* Error Nil */,
+				3BDCA3E72A301E6600BB7A2A /* AppSpark */,
 			);
 		};
 /* End PBXProject section */
@@ -371,7 +371,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3BDCA3E32A301E6500BB7A2A /* Build configuration list for PBXProject "Error Nil" */ = {
+		3BDCA3E32A301E6500BB7A2A /* Build configuration list for PBXProject "AppSpark" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3BDCA3F42A301E6600BB7A2A /* Debug */,
@@ -380,7 +380,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3BDCA3F62A301E6600BB7A2A /* Build configuration list for PBXNativeTarget "Error Nil" */ = {
+		3BDCA3F62A301E6600BB7A2A /* Build configuration list for PBXNativeTarget "AppSpark" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3BDCA3F72A301E6600BB7A2A /* Debug */,
