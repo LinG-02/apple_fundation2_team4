@@ -167,17 +167,20 @@ struct ChallengePage: View {
 struct ChallengePopupView: View {
     var body: some View {
         ScrollView {
+            VStack(alignment: .center){
+                Image(systemName: "mountain.2.fill")
+                                .font(.system(size: 60))
+                                .padding(.top, 60)
+            }
             VStack {
-                Text("Challenge")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .padding()
+                
                 
                 VStack(alignment: .leading) {
                     Group {
                         Text("Challenge Mindmapping")
                             .font(.system(size: 20))
                             .bold()
+                            .padding(.top, 20)
                         
                         Text("You can utilize the Challenge Mindmapping technique to efficiently generate challenge statements around your essential question. This technique will assist you in the process of brainstorming and exploring various possibilities.")
                             .font(.system(size: 16))

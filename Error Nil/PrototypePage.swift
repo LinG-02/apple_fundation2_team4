@@ -21,7 +21,7 @@ struct PrototypePage: View {
     
     
     var body: some View {
-      
+        
             NavigationView{
                 ZStack {
                     
@@ -30,6 +30,7 @@ struct PrototypePage: View {
                     
                     VStack(spacing: 5) {
                         HStack {
+                            
                             Button(action: {
                                 presentationMode.wrappedValue.dismiss()
                             }) {
@@ -43,17 +44,17 @@ struct PrototypePage: View {
                                 .font(.largeTitle)
                                 //.fontWeight(.light)
                                 .frame(maxWidth: .infinity, alignment: .center)
-                                //.padding(.horizontal, 20)
-                            Spacer()
-                            Spacer()
-                            Spacer()
-                            Spacer()
-                            Spacer()
-                            Spacer()
-                            Spacer()
-                            Spacer()
+                                .padding(.horizontal, 20)
+                            
+                            Button(action: {
+                                showInformation = true
+                            }) {
+                                Image(systemName: "info.circle")
+                                    .font(.largeTitle)
+                                    .foregroundColor(.black)
+                            }
                            
-                        
+                                .padding(.horizontal, 20)
                             
                         }
                         
@@ -181,7 +182,7 @@ struct PrototypePage: View {
                                             .padding()
                                             .background(Color.green)
                                             .foregroundColor(.white)
-                                            .font(.title)
+                                            .font(.title3)
                                             .cornerRadius(10)
                                     }
                                     .padding(.trailing)
@@ -198,6 +199,10 @@ struct PrototypePage: View {
                         Alert(title: Text("Congratulations!🎉"),
                               message: Text("Congratulations on completing the app design! You've successfully crafted a visually appealing and user-friendly interface. Fantastic work!"),
                               dismissButton: .default(Text("Well Done!")))
+                    }
+                    .sheet(isPresented: $showInformation) {
+                        // Content of the pop-up view
+                        PrototypePagePopupView()
                     }
                     
                 }
@@ -219,7 +224,67 @@ struct PrototypePage: View {
     }
     
     
-    
+struct PrototypePagePopupView: View {
+    var body: some View {
+        VStack(alignment: .center){
+            Image(systemName: "gearshape.2.fill")
+                            .font(.system(size: 60))
+                            .padding(.top, 60)
+        }
+        VStack (alignment: .leading, spacing: 5) {
+            //Spacer()
+            
+            Text("User Stories")
+                .font(.headline)
+                .padding(.horizontal, 20)
+                .padding(.top, 20)
+            
+            Text("A User Story is a small piece of functionality of the solution from the perspective of the user. Generate 3-4 user stories to represent different functionalities of your app")
+                .font(.subheadline)
+                .padding(.horizontal, 20)
+                .padding(.top, 4)
+            
+            Text("Use the provided format below:")
+                .font(.subheadline)
+                .padding(.horizontal, 20)
+                .padding(.top, 4)
+            
+            Text("As [a user] I want to [an action]")
+                .font(.subheadline)
+                .bold()
+                .padding(.horizontal, 20)
+                .padding(.top, 4)
+            
+            Text("e.g. As [a user] I want to [browse a list of books and add some  of them to my wishlist]")
+                .foregroundColor(.gray)
+                .font(.system(size: 16))
+                .padding(.horizontal, 20)
+                .padding(.top, 4)
+                .padding(.bottom, 4)
+            
+            Divider()
+            Text("Protyping")
+                .font(.headline)
+                .foregroundColor(.black)
+                .padding(.top, 4)
+                .padding(.horizontal, 20)
+            
+            Text("Base your prototype off your user stories and 3-4 main screens (i.e. not an FAQ or sign up) the user would interact with per story")
+                .font(.system(size: 16))
+                .padding(.horizontal, 20)
+                .padding(.top, 4)
+                .padding(.bottom, 4)
+            
+      
+            
+        }
+        .padding()
+        .background(Color.white)
+        .cornerRadius(10)
+        
+        Spacer()
+    }
+}
     
 
 

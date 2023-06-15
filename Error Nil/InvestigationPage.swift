@@ -127,14 +127,14 @@ struct investigationPage: View {
                             
                                 .background(Color.green)
                                 .foregroundColor(.white)
-                                .font(.title)
+                                .font(.title3)
                                 .cornerRadius(10)
                         } else {
                             Text("Update")
                                 .padding()
                                 .background(Color.green)
                                 .foregroundColor(.white)
-                                .font(.title)
+                                .font(.title3)
                                 .cornerRadius(10)
                         }
                     }

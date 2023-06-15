@@ -119,12 +119,22 @@ struct SolutionPage: View {
                          Button(action: {
                              showAlert = true
                          }) {
-                             Text("Done")
-                                 .padding()
-                                 .background(Color.green)
-                                 .foregroundColor(.white)
-                                 .font(.title)
-                                 .cornerRadius(10)
+                             if solution.isEmpty && appConcept.isEmpty {
+                                 Text("Done")
+                                     .padding()
+                                 
+                                     .background(Color.green)
+                                     .foregroundColor(.white)
+                                     .font(.title3)
+                                     .cornerRadius(10)
+                             } else {
+                                 Text("Update")
+                                     .padding()
+                                     .background(Color.green)
+                                     .foregroundColor(.white)
+                                     .font(.title3)
+                                     .cornerRadius(10)
+                             }
                          }
                      }
 
