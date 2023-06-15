@@ -17,7 +17,7 @@ struct ProgressWheel: View {
                     // Action for Button BigIdeaPage
                 }) {
                     NavigationLink(destination: BigIdeaPage()) {
-                        Text("BigIdeaPage")
+                        Text("Big Idea")
                             .font(.headline)
                             .padding()
                             .background(Color.blue)
@@ -43,7 +43,7 @@ struct ProgressWheel: View {
                     // Action for Button investigationPage
                 }) {
                     NavigationLink(destination: investigationPage()) {
-                        Text("investigationPage")
+                        Text("Investigation")
                             .font(.headline)
                             .padding()
                             .background(Color.blue)
@@ -55,7 +55,7 @@ struct ProgressWheel: View {
                     // Action for Button PersonaePage
                 }) {
                     NavigationLink(destination: PersonaePage()) {
-                        Text("PersonaePage")
+                        Text("Personae")
                             .font(.headline)
                             .padding()
                             .background(Color.blue)
@@ -67,7 +67,7 @@ struct ProgressWheel: View {
                     // Action for Button SolutionPage
                 }) {
                     NavigationLink(destination: SolutionPage()) {
-                        Text("SolutionPage")
+                        Text("Solution")
                             .font(.headline)
                             .padding()
                             .background(Color.blue)
