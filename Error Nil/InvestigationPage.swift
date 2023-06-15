@@ -181,7 +181,7 @@ struct investigationPage: View {
                  .padding(.horizontal, 20)
                  .padding(.top, 40)
 
-             Text("This is a more thorough and polished exploration to development your conceptual understanding and important factors in relation to your domain")
+             Text("This is a more thorough and polished exploration to develop your conceptual understanding and important factors in relation to your domain")
                  .font(.subheadline)
                  .padding(.horizontal, 20)
                  .padding(.top, 4)
