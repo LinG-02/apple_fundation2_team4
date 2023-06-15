@@ -13,8 +13,6 @@ class UserInfo: Object {
     @Persisted var BigIdea1: String = ""
     @Persisted var BigIdea2: String = ""
     @Persisted var Challenge1: String = ""
-    @Persisted var Challenge2: String = ""
-    @Persisted var Challenge3: String = ""
     @Persisted var Investigate1: String = ""
     @Persisted var Investigate2: String = ""
     @Persisted var Personae1: String = ""
