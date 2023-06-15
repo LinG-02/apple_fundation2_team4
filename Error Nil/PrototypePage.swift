@@ -177,9 +177,9 @@ struct PrototypePage: View {
                                     }) {
                                         Text("Done")
                                             .padding()
-                                            .background(Color.green.opacity(0.7))
+                                            .background(Color.green)
                                             .foregroundColor(.white)
-                                            .font(.title3)
+                                            .font(.title)
                                             .cornerRadius(10)
                                     }
                                     .padding(.trailing)
