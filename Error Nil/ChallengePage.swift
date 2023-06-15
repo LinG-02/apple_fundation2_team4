@@ -16,7 +16,7 @@ struct ChallengePage: View {
     @AppStorage("Challenge2") private var challengesList = ""
     @AppStorage("Challenge3") private var challengeStatement = ""
     
-    @AppStorage("didPerformInitialization") private var didPerformInitialization: Bool = false
+//    @AppStorage("didPerformInitialization") private var didPerformInitialization: Bool = false
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -133,10 +133,10 @@ struct ChallengePage: View {
                 ChallengePopupView()
             }
             .onAppear {
-                if !didPerformInitialization {
-                    viewModel.clearDatabase()
-                    didPerformInitialization = true
-                }
+//                if !didPerformInitialization {
+//                    viewModel.clearDatabase()
+//                    didPerformInitialization = true
+//                }
                 viewModel.fetchDataFromDatabase()
             }
 //            .navigationBarBackButtonHidden(true)
