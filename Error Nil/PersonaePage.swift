@@ -55,7 +55,7 @@ struct PersonaePage: View {
                     }
                     .padding()
                     
-                    Text("Create a persona of the person you built this app for")
+                    Text("Create a Persona of the person you built this app for")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.system(size: 24))
                         .padding(.top, 40)
