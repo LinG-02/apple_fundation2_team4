@@ -168,10 +168,12 @@ struct ChallengePopupView: View {
     var body: some View {
         ScrollView {
             VStack {
-                Text("Challenge")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .padding()
+                VStack(alignment: .center){
+                    Image(systemName: "mountain.2.fill")
+                        .font(.system(size: 60))
+                    .padding(.top,60)
+                    .padding(.bottom,50)
+                }
                 
                 VStack(alignment: .leading) {
                     Group {
