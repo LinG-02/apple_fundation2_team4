@@ -12,10 +12,30 @@ struct Welcome: View {
     @State var isGlowing: Bool = false
     
     var body: some View {
-        VStack {
-            Spacer()
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [Color.white.opacity(1.0), Color.yellow.opacity(0.2), .white, Color.blue.opacity(0.3)]), startPoint: .top, endPoint: .bottom)
+                .ignoresSafeArea()
             
-            ZStack {
+            VStack {
+                Spacer()
+                
+                Text("AppSpark")
+                    .font(.system(size: 35))
+                    .fontWeight(.bold)
+                    .foregroundColor(.green)
+                    .shadow(color: isGlowing ? .yellow : .clear, radius: 10)
+                    .onDisappear {
+                        isGlowing = false
+                    }
+                
+                Spacer()
+                
+                Text("\"Create an innovative app-concept using a challenge-based learning framework\"")
+                    .italic()
+                    .fontWeight(.regular)
+                
+                Spacer()
+                
                 Image("logo3")
                     .resizable()
                     .frame(width: 260, height: 260)
@@ -30,52 +50,38 @@ struct Welcome: View {
                         isGlowing = false
                     }
                 
-                Text("AppSpark")
-                    .italic()
-                    .font(.system(size: 35))
-                    .fontWeight(.bold)
-                    .foregroundColor(.green)
-                    .shadow(color: isGlowing ? .yellow : .clear, radius: 10)
-                    .offset(y: yOffset)
-                    .onAppear {
-                        withAnimation(Animation.easeInOut(duration: 1.0).repeatForever()) {
-                            isGlowing = true
-                        }
-                    }
-                    .onDisappear {
-                        isGlowing = false
-                    }
+                Spacer()
+                
+                Text("Touch me to start")
+                    .font(.system(size: 30, weight: .bold))
+                    .fontWeight(.light)
+                    .foregroundColor(.black)
+                    .padding(.top, 20)
+                
+                Spacer()
+                Spacer()
             }
-            
-            Text("Touch me to start")
-                .font(.system(size: 30, weight: .bold))
-                .fontWeight(.light)
-                .foregroundColor(.black)
-                .padding(.top, 20)
-            
-            Spacer()
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onTapGesture {
             isTapped = true
         }
         .background(
-                    Button(action: {
-                        withAnimation(.easeInOut(duration: 1.0)) {
-                            isTapped = true
-                        }
-                    }) {
-                        EmptyView()
-                    }
-                    .hidden()
-                )
-                .opacity(isTapped ? 0 : 1)
+            Button(action: {
+                withAnimation(.easeInOut(duration: 1.0)) {
+                    isTapped = true
+                }
+            }) {
+                EmptyView()
+            }
+            .hidden()
+        )
+        .opacity(isTapped ? 0 : 1)
+        .animation(.easeInOut(duration: 1.0), value: isTapped)
+        .overlay(
+            ProgressWheel()
+                .opacity(isTapped ? 1 : 0)
                 .animation(.easeInOut(duration: 1.0), value: isTapped)
-                .overlay(
-                    ProgressWheel()
-                        .opacity(isTapped ? 1 : 0)
-                        .animation(.easeInOut(duration: 1.0), value: isTapped)
-                )
+        )
         .onAppear {
             withAnimation(Animation.easeInOut(duration: 1.5).repeatForever()) {
                 yOffset = -10 // Adjust the bouncing height as needed
@@ -83,6 +89,7 @@ struct Welcome: View {
         }
     }
 }
+
 
 
 struct Welcome_Previews: PreviewProvider {
@@ -93,5 +100,7 @@ struct Welcome_Previews: PreviewProvider {
         .previewDevice("iPhone 14 Pro")
     }
 }
+
+
 
 

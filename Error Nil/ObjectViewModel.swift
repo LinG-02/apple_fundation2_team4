@@ -12,6 +12,8 @@ class ViewModel: ObservableObject {
     @Published var BigIdea1: String = ""
     @Published var BigIdea2: String = ""
     @Published var Challenge1: String = ""
+    @Published var Challenge2: String = ""
+    @Published var Challenge3: String = ""
     @Published var Investigate1: String = ""
     @Published var Investigate2: String = ""
     @Published var Personae1: String = ""

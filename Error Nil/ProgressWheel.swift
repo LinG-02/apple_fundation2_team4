@@ -26,18 +26,18 @@ struct ProgressWheel: View {
                     }
                 }
                 
-//                Button(action: {
-//                    // Action for Button ChallengePage
-//                }) {
-//                    NavigationLink(destination: ChallengePage()) {
-//                        Text("Challenge")
-//                            .font(.headline)
-//                            .padding()
-//                            .background(Color.blue)
-//                            .foregroundColor(.white)
-//                            .cornerRadius(10)
-//                    }
-//                }
+                Button(action: {
+                    // Action for Button ChallengePage
+                }) {
+                    NavigationLink(destination: ChallengePage()) {
+                        Text("Challenge")
+                            .font(.headline)
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
+                }
                 
                 Button(action: {
                     // Action for Button investigationPage

@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct PrototypePage: View {
-    //     @State private var solution: String = ""
-    //     @State private var appConcept: String = ""
+    
     @State private var showAlert = false
     @State private var showInformation = false
     @StateObject private var viewModel = ViewModel()
+    @State private var isGlowing = false
     
     
     
@@ -62,17 +62,19 @@ struct PrototypePage: View {
                             
                             VStack {
                                 Text("Congratulations!")
-                                    .font(.system(size: 35))
-//                                    .fontWeight(.light)
-                                    .bold()
-                                    .foregroundStyle(.yellow)
-
-//                                  .shadow(color: Color(UIColor.label.withAlphaComponent(0.3)), /// shadow color
-//                                            radius: 3, /// shadow radius
-//                                            x: 0, /// x offset
-//                                            y: 2 /// y offset
-//                                        )
-                                    .padding(.bottom)
+                                                                .font(.system(size: 35))
+                                                                .fontWeight(.bold)
+                                                                .foregroundStyle(.green.gradient)
+                                                                .shadow(color: isGlowing ? .yellow : .clear, radius: 10)
+                                                                .onAppear {
+                                                                    withAnimation(Animation.easeInOut(duration: 1.0).repeatForever()) {
+                                                                        isGlowing = true
+                                                                    }
+                                                                }
+                                                                .onDisappear {
+                                                                    isGlowing = false
+                                                                }
+                                                                .padding(.bottom)
                                 
                                 Text("You're almost done!")
                                     .font(.system(size: 25))
