@@ -30,67 +30,67 @@ struct ProgressWheel: View {
                     }
                 }
                 
-//                Button(action: {
-//                    // Action for Button ChallengePage
-//                }) {
-//                    NavigationLink(destination: ChallengePage()) {
-//                        Text("Challenge")
-//                            .font(.headline)
-//                            .padding()
-//                            .background(Color.blue)
-//                            .foregroundColor(.white)
-//                            .cornerRadius(10)
-//                    }
-//                }
-//                
-//                Button(action: {
-//                    // Action for Button investigationPage
-//                }) {
-//                    NavigationLink(destination: investigationPage()) {
-//                        Text("Investigation")
-//                            .font(.headline)
-//                            .padding()
-//                            .background(Color.blue)
-//                            .foregroundColor(.white)
-//                            .cornerRadius(10)
-//                    }
-//                }
-//                Button(action: {
-//                    // Action for Button PersonaePage
-//                }) {
-//                    NavigationLink(destination: PersonaePage()) {
-//                        Text("Personae")
-//                            .font(.headline)
-//                            .padding()
-//                            .background(Color.blue)
-//                            .foregroundColor(.white)
-//                            .cornerRadius(10)
-//                    }
-//                }
-//                Button(action: {
-//                    // Action for Button SolutionPage
-//                }) {
-//                    NavigationLink(destination: SolutionPage()) {
-//                        Text("Solution")
-//                            .font(.headline)
-//                            .padding()
-//                            .background(Color.blue)
-//                            .foregroundColor(.white)
-//                            .cornerRadius(10)
-//                    }
-//                }
-//                Button(action: {
-//                    // Action for Button Prototype
-//                }) {
-//                    NavigationLink(destination: PrototypePage()) {
-//                        Text("Prototype")
-//                            .font(.headline)
-//                            .padding()
-//                            .background(Color.blue)
-//                            .foregroundColor(.white)
-//                            .cornerRadius(10)
-//                    }
-//                }
+                Button(action: {
+                    // Action for Button ChallengePage
+                }) {
+                    NavigationLink(destination: ChallengePage()) {
+                        Text("Challenge")
+                            .font(.headline)
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
+                }
+                
+                Button(action: {
+                    // Action for Button investigationPage
+                }) {
+                    NavigationLink(destination: investigationPage()) {
+                        Text("Investigation")
+                            .font(.headline)
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
+                }
+                Button(action: {
+                    // Action for Button PersonaePage
+                }) {
+                    NavigationLink(destination: PersonaePage()) {
+                        Text("Personae")
+                            .font(.headline)
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
+                }
+                Button(action: {
+                    // Action for Button SolutionPage
+                }) {
+                    NavigationLink(destination: SolutionPage()) {
+                        Text("Solution")
+                            .font(.headline)
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
+                }
+                Button(action: {
+                    // Action for Button Prototype
+                }) {
+                    NavigationLink(destination: PrototypePage()) {
+                        Text("Prototype")
+                            .font(.headline)
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
+                }
           }
         
         }

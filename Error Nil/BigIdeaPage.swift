@@ -15,7 +15,6 @@ struct BigIdeaPage: View {
     @State private var showAlert = false
     @State private var showInformation = false
 
-    // 11/6 Ling's update for keep input
     @AppStorage("BigIdea1") private var storageBigIdea1 = ""
     @AppStorage("BigIdea2") private var storageBigIdea2 = ""
     
@@ -24,10 +23,9 @@ struct BigIdeaPage: View {
         Spacer()
         NavigationView{
             VStack {
-                Color(.sRGB, red: 1, green: 1, blue: 1)
                 VStack(spacing: 5) {
                     // backarrow, heading, info
-                    HStack {
+                    HStack(alignment: .top) {
                         Button(action: {
                             presentationMode.wrappedValue.dismiss()
                         }) {
@@ -48,8 +46,6 @@ struct BigIdeaPage: View {
                                 .foregroundColor(.black)
                         }
                     }
-                    .padding()
-                    
                     Text("Write some Big Ideas in the box below and choose one to pursue")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.system(size: 24))
@@ -77,14 +73,10 @@ struct BigIdeaPage: View {
                         .multilineTextAlignment(.leading)
                         .frame(height: 100)
                         .lineLimit(5)
-                }
-                
-                //alert
-                VStack{
-                    Spacer()
-                    HStack {
-                        Spacer()
-                        
+
+                    
+                    //button
+                    HStack(alignment: .top) {
                         Button(action: {
                             showAlert = true
                             bigIdea1 = storageBigIdea1
@@ -109,21 +101,22 @@ struct BigIdeaPage: View {
                         }
                     }
                 }
-                Spacer()
-            }
-            .padding()
-            .alert(isPresented: $showAlert) {
-                Alert(title: Text("Congratulations!"),
-                      message: Text("Remeber you can go back anytime to edit this milestone"),
-                      dismissButton: .default(Text("Dismiss")))
-            }
-            .sheet(isPresented: $showInformation) {
-                // Content of the pop-up view
-                BigIdeaPopupView()
-            }
+                .padding()
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text("Congratulations!"),
+                          message: Text("Remeber you can go back anytime to edit this milestone"),
+                          dismissButton: .default(Text("Dismiss")))
+                }
+                .sheet(isPresented: $showInformation) {
+                    // Content of the pop-up view
+                    BigIdeaPopupView()
+                }
+                }
+                
             .onTapGesture {
                 hideKeyboard()
             }
+            //to preserve the text in the text box
             .onAppear {
                 bigIdea1 = storageBigIdea1
                 bigIdea2 = storageBigIdea2
