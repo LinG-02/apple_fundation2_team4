@@ -7,9 +7,9 @@
 import SwiftUI
 
 struct Welcome: View {
-    @State var isTapped: Bool = false
-    @State var yOffset: CGFloat = 0
-    @State var isGlowing: Bool = false
+    @State var isTapped: Bool = false // tap to next page
+    @State var yOffset: CGFloat = 0 // float motion
+    @State var isGlowing: Bool = false // glowing logo
     
     var body: some View {
         ZStack {
@@ -22,7 +22,7 @@ struct Welcome: View {
                 Text("AppSpark")
                     .font(.system(size: 35))
                     .fontWeight(.bold)
-                    .foregroundColor(.green)
+                    .foregroundColor(.black)
                     .shadow(color: isGlowing ? .yellow : .clear, radius: 10)
                     .onDisappear {
                         isGlowing = false
@@ -39,7 +39,7 @@ struct Welcome: View {
                 Image("logo3")
                     .resizable()
                     .frame(width: 260, height: 260)
-                    .shadow(color: isGlowing ? .green : .clear, radius: 10)
+                    .shadow(color: isGlowing ? .yellow : .clear, radius: 10)
                     .offset(y: yOffset)
                     .onAppear {
                         withAnimation(Animation.easeInOut(duration: 1.0).repeatForever()) {

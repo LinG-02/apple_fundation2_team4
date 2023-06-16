@@ -11,7 +11,6 @@ struct PrototypePage: View {
     
     @State private var showAlert = false
     @State private var showInformation = false
-    @StateObject private var viewModel = ViewModel()
     @State private var isGlowing = false
     
     

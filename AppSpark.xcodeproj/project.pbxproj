@@ -20,9 +20,7 @@
 		772E09982A31570E002D2411 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 772E09972A31570E002D2411 /* Realm */; };
 		772E099A2A31570E002D2411 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 772E09992A31570E002D2411 /* RealmSwift */; };
 		9FE670262A32A5D400FCE809 /* InvestigationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE670252A32A5D400FCE809 /* InvestigationPage.swift */; };
-		BF26AAB72A35E0C6004C274D /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF26AAB62A35E0C6004C274D /* Database.swift */; };
 		BF26AABB2A35E41D004C274D /* ProgressWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF26AABA2A35E41D004C274D /* ProgressWheel.swift */; };
-		BF26AABF2A35F543004C274D /* ObjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF26AABE2A35F543004C274D /* ObjectViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,9 +36,7 @@
 		770D46302A39AC8D00E1B6FD /* ChallengePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengePage.swift; sourceTree = "<group>"; };
 		772E09942A315298002D2411 /* SolutionPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolutionPage.swift; sourceTree = "<group>"; };
 		9FE670252A32A5D400FCE809 /* InvestigationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestigationPage.swift; sourceTree = "<group>"; };
-		BF26AAB62A35E0C6004C274D /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		BF26AABA2A35E41D004C274D /* ProgressWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressWheel.swift; sourceTree = "<group>"; };
-		BF26AABE2A35F543004C274D /* ObjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +83,6 @@
 				770D46012A32D9C400E1B6FD /* PersonaePage.swift */,
 				772E09942A315298002D2411 /* SolutionPage.swift */,
 				770D46292A39409D00E1B6FD /* PrototypePage.swift */,
-				BF26AAB62A35E0C6004C274D /* Database.swift */,
-				BF26AABE2A35F543004C274D /* ObjectViewModel.swift */,
 			);
 			path = "Error Nil";
 			sourceTree = "<group>";
@@ -183,11 +177,9 @@
 				3BDCA3EE2A301E6600BB7A2A /* ContentView.swift in Sources */,
 				6B8F578D2A302A90008837F6 /* BigIdeaPage.swift in Sources */,
 				3BDCA3EC2A301E6600BB7A2A /* Error_NilApp.swift in Sources */,
-				BF26AABF2A35F543004C274D /* ObjectViewModel.swift in Sources */,
 				770D46312A39AC8D00E1B6FD /* ChallengePage.swift in Sources */,
 				770D46022A32D9C400E1B6FD /* PersonaePage.swift in Sources */,
 				770D462A2A39409D00E1B6FD /* PrototypePage.swift in Sources */,
-				BF26AAB72A35E0C6004C274D /* Database.swift in Sources */,
 				BF26AABB2A35E41D004C274D /* ProgressWheel.swift in Sources */,
 				9FE670262A32A5D400FCE809 /* InvestigationPage.swift in Sources */,
 			);
