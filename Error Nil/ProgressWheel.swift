@@ -12,16 +12,14 @@ public var progressState = 0
 struct ProgressWheel: View {
     var body: some View {
             VStack {
-               
-                    
-                    Text("Progress Wheel")
+                Text("Progress Wheel")
                     .font(.title)
                 
                 Button(action: {
                     // Action for Button BigIdeaPage
                 }) {
-                    NavigationLink(destination: BigIdeaPage()) {
-                        Text("Big Idea")
+                    NavigationLink(destination: BigIdeaListFinal()) {
+                        Text("BigIdeaPage")
                             .font(.headline)
                             .padding()
                             .background(Color.blue)
@@ -47,7 +45,7 @@ struct ProgressWheel: View {
                     // Action for Button investigationPage
                 }) {
                     NavigationLink(destination: investigationPage()) {
-                        Text("Investigation")
+                        Text("investigationPage")
                             .font(.headline)
                             .padding()
                             .background(Color.blue)
@@ -59,7 +57,7 @@ struct ProgressWheel: View {
                     // Action for Button PersonaePage
                 }) {
                     NavigationLink(destination: PersonaePage()) {
-                        Text("Personae")
+                        Text("PersonaePage")
                             .font(.headline)
                             .padding()
                             .background(Color.blue)
@@ -71,7 +69,7 @@ struct ProgressWheel: View {
                     // Action for Button SolutionPage
                 }) {
                     NavigationLink(destination: SolutionPage()) {
-                        Text("Solution")
+                        Text("SolutionPage")
                             .font(.headline)
                             .padding()
                             .background(Color.blue)
@@ -83,7 +81,7 @@ struct ProgressWheel: View {
                     // Action for Button Prototype
                 }) {
                     NavigationLink(destination: PrototypePage()) {
-                        Text("Prototype")
+                        Text("prototype")
                             .font(.headline)
                             .padding()
                             .background(Color.blue)
@@ -91,8 +89,8 @@ struct ProgressWheel: View {
                             .cornerRadius(10)
                     }
                 }
-          }
-        
+            }
+            .navigationBarBackButtonHidden(true)
         }
 }
 
@@ -105,4 +103,3 @@ struct ProgressWheel_Previews: PreviewProvider {
         .previewDevice("iPhone 14 Pro")
     }
 }
-

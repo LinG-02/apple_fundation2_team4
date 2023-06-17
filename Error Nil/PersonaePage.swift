@@ -43,7 +43,8 @@ struct PersonaePage: View {
                             .font(.largeTitle)
                             .foregroundColor(.black)
                     }
-
+                    
+                    
                 }
                 .padding()
                 
@@ -134,7 +135,7 @@ struct PersonaePopupView: View {
                     .padding(.top, 60)
             }
             VStack(alignment: .leading) {
-             
+
 
                 Text("Persona requirements")
                     .font(.headline)

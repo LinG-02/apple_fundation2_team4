@@ -24,32 +24,36 @@ struct ChallengePage: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                HStack(alignment: .top) {
-                    Button(action: {
-                        presentationMode.wrappedValue.dismiss()
-                    }) {
+            VStack(spacing: 10) {
+                HStack {
+                    Button(action: { presentationMode.wrappedValue.dismiss() }) {
                         Image(systemName: "arrow.backward")
                             .font(.largeTitle)
                             .foregroundColor(.black)
                     }
                     
+                    Spacer()
+                    
                     Text("Challenge")
                         .font(.largeTitle)
                         .frame(maxWidth: .infinity, alignment: .center)
                     
-                    Button(action: {
-                        showInformation = true
-                    }) {
+                    Spacer()
+                    
+                    Button(action: { showInformation = true }) {
                         Image(systemName: "info.circle")
                             .font(.largeTitle)
                             .foregroundColor(.black)
                     }
                 }
-
-                
+                            
+                .padding()
+                            
                 ScrollView {
                     VStack{
+//                        Text("Welcome to the Challenge stage! In this stage, you will transform your essential question from the previous stage into a powerful call to action statement.")
+//                            .padding(.bottom)
+                        
                         Text("Do you still remember your Essential Question? Retrieve it from the \"Big Idea\" stage and write it down below.")
                             .padding(.bottom)
                         
@@ -92,14 +96,10 @@ struct ChallengePage: View {
                                     .lineLimit(5)
                             }
                             
-                            Text("Great job! Click the \"Done\" button to save your progress and unlock the next stage.")
-                                .bold()
-                                .padding(.top)
                         }
                     }
                     .padding()
                 }
-                
                 HStack {
                     Spacer()
                     
@@ -127,6 +127,7 @@ struct ChallengePage: View {
                     message: Text("Remember you can go back anytime to edit this milestone"),
                     dismissButton: .default(Text("Dismiss"))
                 )
+
             }
             .sheet(isPresented: $showInformation) {
                 ChallengePopupView()

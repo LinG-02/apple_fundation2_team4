@@ -24,20 +24,23 @@ struct BigIdeaPage: View {
         NavigationView{
             VStack {
                 VStack(spacing: 5) {
-                    // backarrow, heading, info
-                    HStack(alignment: .top) {
+                    HStack {
                         Button(action: {
-                            presentationMode.wrappedValue.dismiss()
-                        }) {
-                            Image(systemName: "arrow.backward")
+                            presentationMode
+                            .wrappedValue.dismiss()
+                            
+                        }) {Image(systemName: "arrow.backward")
                                 .font(.largeTitle)
                                 .foregroundColor(.black)
-                        }
+                                        }
                         
+                        Spacer()
+
                         Text("Big Idea")
                             .font(.largeTitle)
                             .frame(maxWidth: .infinity, alignment: .center)
-                        
+                        Spacer()
+
                         Button(action: {
                             showInformation = true
                         }) {
@@ -46,37 +49,41 @@ struct BigIdeaPage: View {
                                 .foregroundColor(.black)
                         }
                     }
+                   .padding()
                     Text("Write some Big Ideas in the box below and choose one to pursue")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.system(size: 24))
                         .padding(.top, 40)
                         .padding(.bottom, 10.0)
-                    
-                    TextEditor(text: $storageBigIdea1)
-                        .padding(.vertical, 3)
-                        .padding(.horizontal, 5)
-                        .border(Color.black, width: 1)
-                        .multilineTextAlignment(.leading)
-                        .frame(height: 100)
-                        .lineLimit(5)
-                    
-                    Text("Write some Essential Questions in the box below and choose the main one to pursue")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.system(size: 24))
-                        .padding(.top, 40)
-                        .padding(.bottom, 10.0)
-                    
-                    TextEditor(text: $storageBigIdea2)
-                        .padding(.vertical, 3)
-                        .padding(.horizontal, 3)
-                        .border(Color.black, width: 1)
-                        .multilineTextAlignment(.leading)
-                        .frame(height: 100)
-                        .lineLimit(5)
 
-                    
-                    //button
-                    HStack(alignment: .top) {
+                    ZStack(alignment: .topLeading) {
+                        TextEditor(text: $storageBigIdea1)
+                            .padding(.vertical, 3)
+                            .padding(.horizontal, 5)
+                            .border(Color.black, width: 1)
+                            .multilineTextAlignment(.leading)
+                            .frame(height: 100)
+                            .lineLimit(5)
+                    }
+                    Text("Write some Essential Questions in the box below and choose the main one to pursue")                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .font(.system(size: 24))
+                        .padding(.top, 80)
+                        .padding(.bottom, 10.0)
+
+
+                    ZStack(alignment: .topLeading) {
+                        TextEditor(text: $storageBigIdea2)
+                            .padding(.vertical, 3)
+                            .padding(.horizontal, 5)
+                            .border(Color.black, width: 1)
+                            .multilineTextAlignment(.leading)
+                            .frame(height: 100)
+                            .lineLimit(5)
+                    }
+                    Spacer()
+                        .padding(.top, 40)
+                    HStack {
+                        Spacer()
                         Button(action: {
                             showAlert = true
                             bigIdea1 = storageBigIdea1
@@ -86,6 +93,7 @@ struct BigIdeaPage: View {
                             if bigIdea1.isEmpty && bigIdea2.isEmpty {
                                 Text("Done")
                                     .padding()
+                                
                                     .background(Color.green)
                                     .foregroundColor(.white)
                                     .font(.title3)
@@ -100,6 +108,8 @@ struct BigIdeaPage: View {
                             }
                         }
                     }
+
+                    Spacer()
                 }
                 .padding()
                 .alert(isPresented: $showAlert) {
@@ -112,16 +122,16 @@ struct BigIdeaPage: View {
                     BigIdeaPopupView()
                 }
                 }
-                
-            .onTapGesture {
-                hideKeyboard()
-            }
-            //to preserve the text in the text box
-            .onAppear {
-                bigIdea1 = storageBigIdea1
-                bigIdea2 = storageBigIdea2
-            }
         }
+        .onTapGesture {
+            hideKeyboard()
+        }
+        //to preserve the text in the text box
+        .onAppear {
+            bigIdea1 = storageBigIdea1
+            bigIdea2 = storageBigIdea2
+        }
+        
         .navigationBarBackButtonHidden(true)
     }
     
